@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_infos",
+  "info": {
+    "singularName": "company-info",
+    "pluralName": "company-infos",
+    "displayName": "Company Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "map": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

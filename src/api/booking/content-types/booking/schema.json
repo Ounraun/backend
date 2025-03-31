@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "Booking"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "booked_by": {
+      "type": "string"
+    },
+    "contact_info": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "text"
+    },
+    "start_time": {
+      "type": "datetime"
+    },
+    "end_time": {
+      "type": "datetime"
+    },
+    "create_at": {
+      "type": "datetime"
+    },
+    "update_at": {
+      "type": "datetime"
+    }
+  }
+}

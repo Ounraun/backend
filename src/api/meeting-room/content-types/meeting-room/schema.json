@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meeting_rooms",
+  "info": {
+    "singularName": "meeting-room",
+    "pluralName": "meeting-rooms",
+    "displayName": "Meeting Room"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "capacity": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
