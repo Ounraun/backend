@@ -17,12 +17,6 @@
     "content": {
       "type": "text"
     },
-    "create_at": {
-      "type": "datetime"
-    },
-    "update_at": {
-      "type": "datetime"
-    },
     "main_image": {
       "type": "media",
       "multiple": false,
@@ -49,6 +43,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category"
+    },
+    "show_main": {
+      "type": "boolean"
     }
   }
 }
