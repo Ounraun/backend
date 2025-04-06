@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "company_infos",
+  "collectionName": "company_informations",
   "info": {
-    "singularName": "company-info",
-    "pluralName": "company-infos",
-    "displayName": "Company Info",
+    "singularName": "company-information",
+    "pluralName": "company-informations",
+    "displayName": "Company Information",
     "description": ""
   },
   "options": {
@@ -12,7 +12,7 @@
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "text"
     },
     "phone": {
       "type": "string"
@@ -21,7 +21,7 @@
       "type": "email"
     },
     "facebook": {
-      "type": "string"
+      "type": "text"
     },
     "address": {
       "type": "text"

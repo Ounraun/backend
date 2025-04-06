@@ -4,7 +4,8 @@
   "info": {
     "singularName": "meeting-room",
     "pluralName": "meeting-rooms",
-    "displayName": "Meeting Room"
+    "displayName": "Meeting Room",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,11 +14,24 @@
     "name": {
       "type": "string"
     },
-    "capacity": {
-      "type": "integer"
-    },
     "description": {
       "type": "text"
+    },
+    "min": {
+      "type": "integer"
+    },
+    "max": {
+      "type": "integer"
+    },
+    "picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

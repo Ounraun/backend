@@ -411,6 +411,7 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
 export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
   collectionName: 'bookings';
   info: {
+    description: '';
     displayName: 'Booking';
     pluralName: 'bookings';
     singularName: 'booking';
@@ -419,23 +420,29 @@ export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    booked_by: Schema.Attribute.String;
-    contact_info: Schema.Attribute.String;
-    create_at: Schema.Attribute.DateTime;
+    contact_email: Schema.Attribute.String;
+    contact_name: Schema.Attribute.String;
+    contact_phone: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    end_time: Schema.Attribute.DateTime;
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    email: Schema.Attribute.Component<'participant.email', true>;
+    end_time: Schema.Attribute.Time & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::booking.booking'
     > &
       Schema.Attribute.Private;
+    meeting_room: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::meeting-room.meeting-room'
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    purpose: Schema.Attribute.Text;
-    start_time: Schema.Attribute.DateTime;
-    update_at: Schema.Attribute.DateTime;
+    start_time: Schema.Attribute.Time & Schema.Attribute.Required;
+    subject: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -471,13 +478,14 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCompanyInfoCompanyInfo extends Struct.SingleTypeSchema {
-  collectionName: 'company_infos';
+export interface ApiCompanyInformationCompanyInformation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'company_informations';
   info: {
     description: '';
-    displayName: 'Company Info';
-    pluralName: 'company-infos';
-    singularName: 'company-info';
+    displayName: 'Company Information';
+    pluralName: 'company-informations';
+    singularName: 'company-information';
   };
   options: {
     draftAndPublish: true;
@@ -488,15 +496,15 @@ export interface ApiCompanyInfoCompanyInfo extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.Email;
-    facebook: Schema.Attribute.String;
+    facebook: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::company-info.company-info'
+      'api::company-information.company-information'
     > &
       Schema.Attribute.Private;
     map: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.Text;
     phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -508,6 +516,7 @@ export interface ApiCompanyInfoCompanyInfo extends Struct.SingleTypeSchema {
 export interface ApiMeetingRoomMeetingRoom extends Struct.CollectionTypeSchema {
   collectionName: 'meeting_rooms';
   info: {
+    description: '';
     displayName: 'Meeting Room';
     pluralName: 'meeting-rooms';
     singularName: 'meeting-room';
@@ -516,7 +525,6 @@ export interface ApiMeetingRoomMeetingRoom extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    capacity: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -527,7 +535,10 @@ export interface ApiMeetingRoomMeetingRoom extends Struct.CollectionTypeSchema {
       'api::meeting-room.meeting-room'
     > &
       Schema.Attribute.Private;
+    max: Schema.Attribute.Integer;
+    min: Schema.Attribute.Integer;
     name: Schema.Attribute.String;
+    picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1047,7 +1058,7 @@ declare module '@strapi/strapi' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
-      'api::company-info.company-info': ApiCompanyInfoCompanyInfo;
+      'api::company-information.company-information': ApiCompanyInformationCompanyInformation;
       'api::meeting-room.meeting-room': ApiMeetingRoomMeetingRoom;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
