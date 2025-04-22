@@ -491,18 +491,18 @@ export interface ApiCentralizeManagementCentralizeManagement
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.Component<'content.content-card', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    detail: Schema.Attribute.Component<'content.content', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::centralize-management.centralize-management'
     > &
       Schema.Attribute.Private;
+    mainSubTitle: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
-    subTitle: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

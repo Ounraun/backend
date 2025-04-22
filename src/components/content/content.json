@@ -1,8 +1,13 @@
 {
   "collectionName": "components_content_contents",
   "info": {
-    "displayName": "content"
+    "displayName": "content",
+    "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "title": {
+      "type": "text"
+    }
+  }
 }

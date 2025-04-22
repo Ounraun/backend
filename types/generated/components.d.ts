@@ -3,9 +3,12 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface ContentContent extends Struct.ComponentSchema {
   collectionName: 'components_content_contents';
   info: {
+    description: '';
     displayName: 'content';
   };
-  attributes: {};
+  attributes: {
+    title: Schema.Attribute.Text;
+  };
 }
 
 export interface ContentContentCard extends Struct.ComponentSchema {
