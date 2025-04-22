@@ -1,5 +1,24 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContentContent extends Struct.ComponentSchema {
+  collectionName: 'components_content_contents';
+  info: {
+    displayName: 'content';
+  };
+  attributes: {};
+}
+
+export interface ContentContentCard extends Struct.ComponentSchema {
+  collectionName: 'components_content_content_cards';
+  info: {
+    displayName: 'Content Card';
+  };
+  attributes: {
+    subTitle: Schema.Attribute.Text;
+    title: Schema.Attribute.Text;
+  };
+}
+
 export interface ParticipantEmail extends Struct.ComponentSchema {
   collectionName: 'components_participant_emails';
   info: {
@@ -13,6 +32,8 @@ export interface ParticipantEmail extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'content.content': ContentContent;
+      'content.content-card': ContentContentCard;
       'participant.email': ParticipantEmail;
     }
   }

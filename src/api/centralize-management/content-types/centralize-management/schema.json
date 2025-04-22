@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "centralize_managements",
+  "info": {
+    "singularName": "centralize-management",
+    "pluralName": "centralize-managements",
+    "displayName": "Centralize management",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "subTitle": {
+      "type": "text"
+    },
+    "detail": {
+      "displayName": "content",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.content"
+    }
+  }
+}

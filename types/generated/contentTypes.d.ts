@@ -478,6 +478,37 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCentralizeManagementCentralizeManagement
+  extends Struct.SingleTypeSchema {
+  collectionName: 'centralize_managements';
+  info: {
+    description: '';
+    displayName: 'Centralize management';
+    pluralName: 'centralize-managements';
+    singularName: 'centralize-management';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    detail: Schema.Attribute.Component<'content.content', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::centralize-management.centralize-management'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subTitle: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCompanyInformationCompanyInformation
   extends Struct.SingleTypeSchema {
   collectionName: 'company_informations';
@@ -510,6 +541,9 @@ export interface ApiCompanyInformationCompanyInformation
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    viedoknowledge: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -1058,6 +1092,7 @@ declare module '@strapi/strapi' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
+      'api::centralize-management.centralize-management': ApiCentralizeManagementCentralizeManagement;
       'api::company-information.company-information': ApiCompanyInformationCompanyInformation;
       'api::meeting-room.meeting-room': ApiMeetingRoomMeetingRoom;
       'plugin::content-releases.release': PluginContentReleasesRelease;
