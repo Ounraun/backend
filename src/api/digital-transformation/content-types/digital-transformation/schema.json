@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "digital_transformations",
+  "info": {
+    "singularName": "digital-transformation",
+    "pluralName": "digital-transformations",
+    "displayName": "Digital transformation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "subTitle": {
+      "type": "text"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.content-card"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "data_managements",
+  "info": {
+    "singularName": "data-management",
+    "pluralName": "data-managements",
+    "displayName": "Data management",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "subTitle1": {
+      "type": "text"
+    },
+    "subTitle2": {
+      "type": "text"
+    },
+    "serviceContent1": {
+      "type": "text"
+    },
+    "serviceContent2": {
+      "type": "text"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.content-card"
+    }
+  }
+}

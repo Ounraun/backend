@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "data_centers",
+  "info": {
+    "singularName": "data-center",
+    "pluralName": "data-centers",
+    "displayName": "Data center",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "subTitle": {
+      "type": "text"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.content-card"
+    }
+  }
+}

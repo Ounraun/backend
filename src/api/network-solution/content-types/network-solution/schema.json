@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "network_solutions",
+  "info": {
+    "singularName": "network-solution",
+    "pluralName": "network-solutions",
+    "displayName": "Network solution",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "subTitle": {
+      "type": "text"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.content-card"
+    },
+    "subTitle2": {
+      "type": "text"
+    },
+    "mainImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

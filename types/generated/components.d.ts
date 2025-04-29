@@ -14,9 +14,11 @@ export interface ContentContent extends Struct.ComponentSchema {
 export interface ContentContentCard extends Struct.ComponentSchema {
   collectionName: 'components_content_content_cards';
   info: {
+    description: '';
     displayName: 'Content Card';
   };
   attributes: {
+    content: Schema.Attribute.Text;
     subTitle: Schema.Attribute.Text;
     title: Schema.Attribute.Text;
   };

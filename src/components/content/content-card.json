@@ -1,7 +1,8 @@
 {
   "collectionName": "components_content_content_cards",
   "info": {
-    "displayName": "Content Card"
+    "displayName": "Content Card",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,6 +10,9 @@
       "type": "text"
     },
     "subTitle": {
+      "type": "text"
+    },
+    "content": {
       "type": "text"
     }
   }

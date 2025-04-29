@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "multimedie_solutions",
+  "info": {
+    "singularName": "multimedie-solution",
+    "pluralName": "multimedie-solutions",
+    "displayName": "Multimedia solution",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "subTitle": {
+      "type": "text"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.content-card"
+    }
+  }
+}
